@@ -93,7 +93,7 @@ const Home = ({navigation}) => {
         }}
         numColumns={2}
         renderItem={({item}) => (
-          <TouchableOpacity onPress={() => navigation.navigate(item.title)}>
+          <TouchableOpacity activeOpacity={0.8} onPress={() => navigation.navigate(item.title)}>
             <View style={[styles.card, {width: (width - 40) / 2}]}>
               <Image source={{uri: item.url}} style={styles.image} />
               <Text style={styles.title}>{item.title}</Text>

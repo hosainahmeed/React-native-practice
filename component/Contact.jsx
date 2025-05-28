@@ -6,7 +6,7 @@ const Contact = () => {
   return (
     <SafeAreaView>
       <View>
-        <Text>Contact</Text>
+        <Text style={styles.text}>Contact</Text>
       </View>
     </SafeAreaView>
   );
@@ -14,4 +14,10 @@ const Contact = () => {
 
 export default Contact;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  text: {
+    color: 'red',
+    fontSize: 20,
+    fontWeight: 'bold',
+  },
+});

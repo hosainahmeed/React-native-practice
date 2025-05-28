@@ -1,3 +1,4 @@
+/* eslint-disable eol-last */
 import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 
@@ -17,4 +18,4 @@ const styles = StyleSheet.create({
         fontSize:20,
         fontWeight:'bold',
     },
-})
+});
