@@ -8,7 +8,7 @@ import {StatusBar} from 'react-native';
 
 const Stack = createNativeStackNavigator();
 
-function App(): React.JSX.Element {
+function App() {
   return (
     <NavigationContainer>
       <StatusBar barStyle="dark-content" />
