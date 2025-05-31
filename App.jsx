@@ -5,6 +5,7 @@ import About from './src/component/About';
 import Contact from './src/component/Contact';
 import {StatusBar} from 'react-native';
 import Login from './src/screen/Login';
+import Home from './src/component/Home';
 
 const Stack = createNativeStackNavigator();
 
@@ -19,6 +20,7 @@ function App() {
           component={Login}
         />
         <Stack.Screen name="About" component={About} />
+        <Stack.Screen name="Home" component={Home} />
         <Stack.Screen
           options={{title: 'Contact Page', headerShown: false}}
           name="Contact"
