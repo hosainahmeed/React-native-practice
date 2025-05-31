@@ -1,9 +1,9 @@
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
-import Home from './component/Home';
-import About from './component/About';
-import Contact from './component/Contact';
+import Home from './src/component/Home';
+import About from './src/component/About';
+import Contact from './src/component/Contact';
 import {StatusBar} from 'react-native';
 
 const Stack = createNativeStackNavigator();
@@ -14,7 +14,7 @@ function App() {
       <StatusBar barStyle="dark-content" />
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen
-          options={{title: 'Home Page'}}
+          options={{headerShown: false}}
           name="Home"
           component={Home}
         />
