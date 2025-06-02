@@ -1,12 +1,14 @@
-import React, {useState} from 'react';
+/* eslint-disable react/no-unstable-nested-components */
+import React, {memo, useState} from 'react';
 import {
   KeyboardAvoidingView,
   Platform,
-  ScrollView,
   StyleSheet,
   Text,
   View,
   Alert,
+  FlatList,
+  TouchableOpacity,
 } from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import * as yup from 'yup';
@@ -27,7 +29,7 @@ const loginSchema = yup.object().shape({
     .required('Password is required'),
 });
 
-export default function Login() {
+function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState({});
@@ -55,44 +57,59 @@ export default function Login() {
       <KeyboardAvoidingView
         style={styles.container}
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
-        <ScrollView contentContainerStyle={styles.scrollContent}>
-          <View style={styles.header}>
-            <BarndIcon />
-          </View>
-          <View style={styles.form}>
-            <CustomInput
-              placeholder="Email"
-              value={email}
-              onChangeText={setEmail}
-            />
-            {errors.email && (
-              <Text style={styles.errorText}>{errors.email}</Text>
-            )}
+        <FlatList
+          contentContainerStyle={styles.scrollContent}
+          data={[{key: 'form'}]}
+          renderItem={() => (
+            <View style={styles.form}>
+              <CustomInput
+                placeholder="Email"
+                value={email}
+                onChangeText={setEmail}
+              />
+              {errors.email && (
+                <Text style={styles.errorText}>{errors.email}</Text>
+              )}
 
-            <CustomInput
-              placeholder="Password"
-              value={password}
-              onChangeText={setPassword}
-              secureTextEntry
-            />
-            {errors.password && (
-              <Text style={styles.errorText}>{errors.password}</Text>
-            )}
+              <CustomInput
+                placeholder="Password"
+                value={password}
+                onChangeText={setPassword}
+                secureTextEntry
+              />
+              {errors.password && (
+                <Text style={styles.errorText}>{errors.password}</Text>
+              )}
 
-            <CustomButton text="Login" onPress={handleLogin} />
-          </View>
-          <View style={styles.separator}>
-            <Text style={styles.separatorText}>Or</Text>
-          </View>
-          <View style={styles.separator}>
-            <Text style={styles.separatorText}>Don’t have an account? Sign up</Text>
-          </View>
-        </ScrollView>
+              <CustomButton text="Login" onPress={handleLogin} />
+              <TouchableOpacity>
+                <Text style={styles.forgotPassword}>Forgot Password?</Text>
+              </TouchableOpacity>
+            </View>
+          )}
+          ListHeaderComponent={() => (
+            <View style={styles.header}>
+              <BarndIcon />
+            </View>
+          )}
+          ListFooterComponent={() => (
+            <View>
+              <View style={styles.separator}>
+                <Text style={styles.separatorText}>Or</Text>
+              </View>
+              <View style={styles.separator}>
+                <Text style={styles.separatorText}>
+                  Don’t have an account? Sign up
+                </Text>
+              </View>
+            </View>
+          )}
+        />
       </KeyboardAvoidingView>
     </SafeAreaView>
   );
 }
-
+export default memo(Login);
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
@@ -116,6 +133,13 @@ const styles = StyleSheet.create({
     gap: 10,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  forgotPassword: {
+    width: 300,
+    textAlign: 'right',
+    color: '#0F5E5B',
+    fontWeight: 'bold',
+    marginTop: 7,
   },
   separatorText: {
     color: '#0F5E5B',
