@@ -66,13 +66,13 @@ const ThirdScreen = () => {
       {/* Buttons */}
       <View style={styles.buttonsContainer}>
         <TouchableOpacity
-          onPress={() => navigation.replace('Home')}
+          onPress={() => navigation.replace('Login')}
           style={[styles.button, styles.skipButton]}>
           <Text style={styles.buttonText}>Skip</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
-          onPress={() => navigation.replace('Home')}
+          onPress={() => navigation.replace('Login')}
           style={[styles.button, styles.continueButton]}>
           <Text style={styles.buttonText}>Continue</Text>
         </TouchableOpacity>

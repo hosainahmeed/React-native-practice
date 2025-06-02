@@ -7,7 +7,6 @@ import {StatusBar} from 'react-native';
 import Login from './src/screen/Login';
 import Home from './src/component/Home';
 import { SecondScreen, ThirdScreen } from './src/screen/multi-step-onboarding/SecondScreen';
-import FirstScreen from './src/screen/multi-step-onboarding/FirstScreen';
 import SplashScreen from 'react-native-splash-screen';
 
 // Import the new onboarding screens
@@ -21,13 +20,8 @@ function App() {
   return (
     <NavigationContainer>
       <StatusBar barStyle="dark-content" />
-      <Stack.Navigator initialRouteName="First">
-        {/* Loader (First onboarding) */}
-        <Stack.Screen
-          options={{headerShown: false}}
-          name="First"
-          component={FirstScreen}
-        />
+      <Stack.Navigator initialRouteName="Second">
+
 
         {/* Onboarding Step 2 */}
         <Stack.Screen
@@ -50,7 +44,7 @@ function App() {
           component={Login}
         />
         <Stack.Screen name="About" component={About} />
-        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen options={{headerShown: false}} name="Home" component={Home} />
         <Stack.Screen
           options={{title: 'Contact Page', headerShown: false}}
           name="Contact"

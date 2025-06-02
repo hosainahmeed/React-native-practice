@@ -5,8 +5,7 @@ export default function BarndIcon() {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.wrapper}>
-        <Image style={styles.image} source={require('../assets/logo.png')} />
-        <Text style={styles.text}>Selling point</Text>
+        <Image style={styles.image} source={require('../assets/auth.png')} />
       </View>
     </SafeAreaView>
   );
@@ -27,8 +26,8 @@ const styles = StyleSheet.create({
     gap: 10,
   },
   image: {
-    width: 24,
-    height: 24,
+    width: 150,
+    height: 150,
   },
   text: {
     color: '#111',

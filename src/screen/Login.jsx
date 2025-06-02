@@ -59,10 +59,6 @@ export default function Login() {
           <View style={styles.header}>
             <BarndIcon />
           </View>
-
-          <Text style={styles.title}>Welcome Back!</Text>
-          <Text style={styles.subtitle}>Login to your account</Text>
-
           <View style={styles.form}>
             <CustomInput
               placeholder="Email"
@@ -86,21 +82,10 @@ export default function Login() {
             <CustomButton text="Login" onPress={handleLogin} />
           </View>
           <View style={styles.separator}>
-            <Text style={styles.separatorText}>Or sign up with</Text>
+            <Text style={styles.separatorText}>Or</Text>
           </View>
-          <View style={styles.socialButtons}>
-            <CustomButton
-              text="Facebook"
-              onPress={() => Alert.alert('Sign up with Facebook')}
-            />
-            <CustomButton
-              text="Apple"
-              onPress={() => Alert.alert('Sign up with Apple')}
-            />
-            <CustomButton
-              text="Google"
-              onPress={() => Alert.alert('Sign up with Google')}
-            />
+          <View style={styles.separator}>
+            <Text style={styles.separatorText}>Don’t have an account? Sign up</Text>
           </View>
         </ScrollView>
       </KeyboardAvoidingView>
@@ -141,6 +126,8 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     padding: 20,
     justifyContent: 'center',
+    maxWidth: 356,
+    minWidth: 330,
   },
   header: {
     alignItems: 'center',
