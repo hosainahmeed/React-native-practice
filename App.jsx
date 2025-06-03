@@ -8,6 +8,7 @@ import Login from './src/screen/Login';
 import Home from './src/components/Home';
 import { SecondScreen, ThirdScreen } from './src/screen/multi-step-onboarding/SecondScreen';
 import SplashScreen from 'react-native-splash-screen';
+import SignUpForm from './src/components/SignUpForm';
 
 // Import the new onboarding screens
 
@@ -43,6 +44,7 @@ function App() {
           name="Login"
           component={Login}
         />
+        <Stack.Screen name="SignUp" component={SignUpForm} />
         <Stack.Screen name="About" component={About} />
         <Stack.Screen options={{headerShown: false}} name="Home" component={Home} />
         <Stack.Screen
