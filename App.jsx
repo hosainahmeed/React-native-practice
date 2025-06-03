@@ -1,11 +1,11 @@
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React, { useEffect } from 'react';
-import About from './src/component/About';
-import Contact from './src/component/Contact';
+import About from './src/components/About';
+import Contact from './src/components/Contact';
 import {StatusBar} from 'react-native';
 import Login from './src/screen/Login';
-import Home from './src/component/Home';
+import Home from './src/components/Home';
 import { SecondScreen, ThirdScreen } from './src/screen/multi-step-onboarding/SecondScreen';
 import SplashScreen from 'react-native-splash-screen';
 

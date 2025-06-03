@@ -13,9 +13,9 @@ import {
 import {SafeAreaView} from 'react-native-safe-area-context';
 import * as yup from 'yup';
 
-import BarndIcon from '../component/BarndIcon';
-import CustomInput from '../component/CustomInput';
-import CustomButton from '../component/CustomButton';
+import BarndIcon from '../components/BarndIcon';
+import CustomInput from '../components/CustomInput';
+import CustomButton from '../components/CustomButton';
 import {useNavigation} from '@react-navigation/native';
 
 const loginSchema = yup.object().shape({
